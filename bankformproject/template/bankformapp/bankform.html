@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ACC REGISTRATION FORM</title>
+</head>
+<body>
+	<center>
+		<form method='POST'>
+			{{ form.as_p }}
+			{% csrf_token %}
+			<input type="submit" name="register">
+			
+		</form>
+	</center>
+
+</body>
+</html>

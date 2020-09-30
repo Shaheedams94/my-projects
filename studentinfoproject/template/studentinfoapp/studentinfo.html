@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>STUDENT INFORMATION</title>
+	<link rel="stylesheet" type="text/css" href="{% static "css/studentinfo.css" %}">
+	
+</head>
+<body>
+
+	<center>
+	{% if student %}
+	<h1>The student information is as below</h1>
+	<table border="5">
+		<tr>
+			<td>FIRSTNAME</td>
+			<td>LASTNAME</td>
+			<td>CLG</td>
+			<td>BRANCH</td>
+			<td>CGPA</td>
+		</tr>
+		{% for s in student %}
+		<tr>
+			<td>{{ s.FIRSTNAME }}</td>
+			<td>{{ s.LASTNAME }}</td>
+			<td>{{ s.CLG }}</td>
+			<td>{{ s.BRANCH }}</td>
+			<td>{{ s.CGPA }}</td>
+		</tr>	
+		{% endfor %}
+	</table>
+	{% else %}
+		<p>RECORDS NOT FOUND</p>
+		
+	{% endif %}
+	</center>
+
+</body>
+</html>

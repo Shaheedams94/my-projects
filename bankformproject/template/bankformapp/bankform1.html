@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<head>
+	<title>CANDIDATE INFORMATION</title>
+	
+</head>
+<body>
+
+	<center>
+		
+	{% if candidate %}
+	<h1>The candidate information is as below</h1>
+	<table border="5">
+		<tr>
+			<td>FIRSTNAME</td>
+			<td>LASTNAME</td>
+			<td>ADDRESS</td>
+			<td>AGE </td>
+			<td>DOB </td>
+			<td>BRANCH</td>
+			<td>PHONENO </td>
+			<td>EMAIL</td>
+		</tr>
+		{% for c in candidate %}
+		<tr>
+			<td>{{ c.FIRSTNAME }}</td>
+			<td>{{ c.LASTNAME }}</td>
+			<td>{{c.ADDRESS }}</td>
+			<td>{{ c.AGE }}</td>
+			<td>{{ c.DOB }}</td>
+			<td>{{ c.BRANCH }}</td>
+			<td>{{ c.PHONENO }}</td>
+			<td>{{ c.EMAIL }}</td>
+		</tr>	
+		{% endfor %}
+	</table>
+	{% else %}
+		<p>RECORDS NOT FOUND</p>
+		
+	{% endif %}
+	</center>
+
+</body>
+</html>
